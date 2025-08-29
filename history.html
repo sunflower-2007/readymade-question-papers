@@ -8,23 +8,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* Reset & Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f9f9fb;
+      background: #f4f6fb;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     /* Navbar */
     header {
       background: linear-gradient(135deg, #6a11cb, #2575fc);
       padding: 1rem 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     .navbar {
       display: flex;
@@ -34,7 +33,7 @@
       margin: auto;
     }
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: #fff;
       letter-spacing: 1px;
@@ -48,10 +47,13 @@
       text-decoration: none;
       color: #fff;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: 0.3s;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
     }
     .nav-links a:hover,
     .nav-links a.active {
+      background: rgba(255, 255, 255, 0.2);
       color: #ffd86a;
     }
 
@@ -64,19 +66,25 @@
     .section {
       margin-bottom: 3rem;
       padding: 2rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    .section:hover {
+      transform: translateY(-4px);
     }
     .section h2 {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      color: #333;
-      border-bottom: 3px solid #2575fc;
-      display: inline-block;
-      padding-bottom: 0.3rem;
+      color: #2575fc;
+      border-left: 5px solid #6a11cb;
+      padding-left: 0.6rem;
     }
+
+    /* PDF list */
     .pdf-list {
       list-style: none;
       margin-top: 1rem;
@@ -86,12 +94,17 @@
     }
     .pdf-list a {
       text-decoration: none;
-      color: #2575fc;
+      padding: 0.8rem 1rem;
+      display: inline-block;
+      border-radius: 8px;
+      background: #eef3ff;
       font-weight: 600;
-      transition: color 0.3s ease;
+      color: #2575fc;
+      transition: all 0.3s ease;
     }
     .pdf-list a:hover {
-      color: #6a11cb;
+      background: #2575fc;
+      color: #fff;
     }
 
     /* Cards */
@@ -102,16 +115,16 @@
       margin-top: 1.5rem;
     }
     .card {
-      background: #fdfdfd;
-      border-radius: 12px;
+      background: white;
+      border-radius: 14px;
       padding: 2rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.15);
     }
     .card h3 {
       font-size: 1.4rem;
@@ -120,25 +133,44 @@
       margin-bottom: 0.5rem;
     }
     .card p {
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
       font-size: 1rem;
       color: #555;
     }
     .card p strong {
       color: #2575fc;
     }
+    .price-tag {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #6a11cb;
+      margin: 0.5rem 0 1rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: linear-gradient(135deg, #2575fc, #6a11cb);
+    }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem 1rem;
       margin-top: 3rem;
-      background: #f1f3f7;
+      background: #1a1a1a;
+      color: #ccc;
       font-size: 0.95rem;
-      color: #555;
     }
     footer a {
-      color: #2575fc;
+      color: #ffd86a;
       font-weight: 600;
       text-decoration: none;
     }
@@ -165,8 +197,8 @@
     <section class="section">
       <h2>Sample Papers (ICSE History)</h2>
       <ul class="pdf-list">
-        <li><a href="pdfs/history-sample1.pdf" target="_blank">Download Sample Paper 1 (PDF)</a></li>
-        <li><a href="pdfs/history-sample2.pdf" target="_blank">Download Sample Paper 2 (PDF)</a></li>
+        <li><a href="pdfs/history-sample1.pdf" target="_blank">📜 Download Sample Paper 1</a></li>
+        <li><a href="pdfs/history-sample2.pdf" target="_blank">📜 Download Sample Paper 2</a></li>
       </ul>
     </section>
 
@@ -175,18 +207,21 @@
       <div class="cards">
         <div class="card">
           <h3>Readymade Paper</h3>
-          <p>₹500</p>
+          <p class="price-tag">₹500</p>
           <p>If you are interested, please contact:<br><strong>ISCICSESamplepaper@gmail.com</strong></p>
+          <a href="mailto:ISCICSESamplepaper@gmail.com" class="btn">Order Now</a>
         </div>
         <div class="card">
           <h3>Paper + Marking Scheme</h3>
-          <p>₹1000</p>
+          <p class="price-tag">₹1000</p>
           <p>If you are interested, please contact:<br><strong>ISCICSESamplepaper@gmail.com</strong></p>
+          <a href="mailto:ISCICSESamplepaper@gmail.com" class="btn">Order Now</a>
         </div>
         <div class="card">
           <h3>Custom Requirement</h3>
-          <p>₹1500</p>
+          <p class="price-tag">₹1500</p>
           <p>If you are interested, please contact:<br><strong>ISCICSESamplepaper@gmail.com</strong></p>
+          <a href="mailto:ISCICSESamplepaper@gmail.com" class="btn">Order Now</a>
         </div>
       </div>
     </section>
@@ -199,7 +234,10 @@
 
   <!-- Footer -->
   <footer>
-    <p>Contact: <a href="mailto:ISCICSESamplepaper@gmail.com">ISCICSESamplepaper@gmail.com</a></p>
+    <p>📩 Contact us at <a href="mailto:ISCICSESamplepaper@gmail.com">ISCICSESamplepaper@gmail.com</a></p>
+    <p>&copy; 2025 Readymade Question Papers. All rights reserved.</p>
   </footer>
 </body>
 </html>
+
+

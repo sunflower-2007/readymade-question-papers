@@ -1,129 +1,237 @@
-/* Reset + Fonts */
-body {
+/* ================================
+   Global Reset + Fonts
+================================ */
+* {
   margin: 0;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  background: #f9f9f9;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a { text-decoration: none; color: #0077cc; }
-a:hover { color: #005fa3; }
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f9f9fb;
+  color: #333;
+  line-height: 1.6;
+}
 
+/* Links */
+a {
+  text-decoration: none;
+  color: #0077cc;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #005fa3;
+}
+
+/* ================================
+   Header + Navbar
+================================ */
 header {
-  background: #222;
+  background: linear-gradient(135deg, #1c1c1c, #333);
   color: #fff;
-  padding: 10px 20px;
+  padding: 12px 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 18px;
 }
 
 .nav-links li a {
   color: #fff;
-  font-weight: bold;
-  padding: 6px 10px;
-  border-radius: 4px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .nav-links li a:hover,
 .nav-links li a.active {
   background: #0077cc;
+  color: #fff;
 }
 
-/* Hero Section */
+/* ================================
+   Hero Section
+================================ */
 .hero {
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
   background: linear-gradient(to right, #0077cc, #00bfff);
   color: white;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-.hero h2 { font-size: 2rem; margin-bottom: 10px; }
-.hero p { font-size: 1.2rem; margin-bottom: 20px; }
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
 
 .hero-buttons .btn {
   background: white;
   color: #0077cc;
-  padding: 10px 20px;
-  border-radius: 25px;
-  margin: 5px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  margin: 8px;
   font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .hero-buttons .btn:hover {
   background: #f0f0f0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-/* Sections */
+/* ================================
+   Sections
+================================ */
 .section {
-  padding: 40px 20px;
-  max-width: 900px;
+  padding: 60px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
 .section h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #0077cc;
+  font-size: 1.8rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
 }
 
-/* PDF list */
+.section h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #00bfff;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+/* ================================
+   PDF List
+================================ */
 .pdf-list {
   list-style: none;
   padding: 0;
 }
 
 .pdf-list li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-size: 1.1rem;
+  padding-left: 20px;
+  position: relative;
 }
 
-/* Cards */
+.pdf-list li::before {
+  content: "📄";
+  position: absolute;
+  left: 0;
+}
+
+/* ================================
+   Cards (Pricing / Offers)
+================================ */
 .cards {
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 20px;
 }
 
 .card {
   background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 28px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .card h3 {
   margin-top: 0;
   color: #0077cc;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 .card p {
-  margin: 10px 0;
+  margin: 12px 0;
+  color: #555;
+  font-size: 1rem;
 }
 
-/* Footer */
+.card p strong {
+  color: #0077cc;
+}
+
+/* ================================
+   Footer
+================================ */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 24px;
   background: #222;
   color: #fff;
-  margin-top: 40px;
+  margin-top: 60px;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #00bfff;
+  font-weight: 600;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+  .nav-links {
+    gap: 10px;
+  }
 }
